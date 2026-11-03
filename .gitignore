@@ -11,6 +11,7 @@ lerna-debug.log*
 dist
 dist-ssr
 *.local
+.taste-skill/
 tsconfig.tsbuildinfo
 
 # Dependencies
