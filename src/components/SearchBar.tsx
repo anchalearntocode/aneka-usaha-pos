@@ -16,9 +16,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   categories,
 }) => {
   return (
-    <div className="space-y-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-xs transition-colors duration-150">
+    <div className="space-y-3 bg-white/90 dark:bg-[#132039]/90 backdrop-blur-xs p-4 rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs transition-colors duration-150">
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 dark:text-slate-500">
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#496995] dark:text-[#A5B5D2]">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -28,13 +28,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Cari nama barang atau jasa (HVS, Pulpen, Tinta)..."
-          className="w-full pl-9 pr-9 py-2.5 bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 transition"
+          className="w-full pl-9 pr-9 py-2.5 bg-slate-50/90 dark:bg-[#1E3156]/50 border border-[#A5B5D2]/40 dark:border-[#496995]/40 rounded-lg text-xs text-slate-900 dark:text-slate-100 placeholder-[#496995]/60 dark:placeholder-[#A5B5D2]/60 focus:bg-white dark:focus:bg-[#1E3156] focus:outline-none focus:ring-2 focus:ring-[#496995] transition"
         />
         {searchTerm && (
           <button
             type="button"
             onClick={() => onSearchChange('')}
-            className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+            className="absolute inset-y-0 right-0 pr-3 flex items-center text-[#496995] hover:text-[#1E3156] dark:hover:text-white"
             title="Hapus pencarian"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -51,8 +51,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           onClick={() => onSelectCategory('Semua')}
           className={`min-h-[36px] px-3.5 py-1.5 rounded-lg font-medium transition ${
             selectedCategory === 'Semua'
-              ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold shadow-xs'
-              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+              ? 'bg-[#1E3156] dark:bg-[#496995] text-white font-semibold shadow-xs'
+              : 'bg-[#B0CBE6]/20 dark:bg-[#1E3156]/50 text-[#496995] dark:text-[#A5B5D2] hover:bg-[#B0CBE6]/35 dark:hover:bg-[#1E3156]/80'
           }`}
         >
           Semua Produk
@@ -64,8 +64,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             onClick={() => onSelectCategory(cat)}
             className={`min-h-[36px] px-3.5 py-1.5 rounded-lg font-medium whitespace-nowrap transition ${
               selectedCategory === cat
-                ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold shadow-xs'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+                ? 'bg-[#1E3156] dark:bg-[#496995] text-white font-semibold shadow-xs'
+                : 'bg-[#B0CBE6]/20 dark:bg-[#1E3156]/50 text-[#496995] dark:text-[#A5B5D2] hover:bg-[#B0CBE6]/35 dark:hover:bg-[#1E3156]/80'
             }`}
           >
             {cat}

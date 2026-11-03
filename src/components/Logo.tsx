@@ -56,14 +56,14 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'full', className = '' }) 
       </div>
       <div className="leading-tight">
         <div className="flex items-center space-x-1.5">
-          <span className="text-sm font-black tracking-tight text-slate-900 dark:text-white">
+          <span className="text-sm font-black tracking-tight text-[#1E3156] dark:text-white">
             Toko Aneka Usaha
           </span>
-          <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 uppercase tracking-wide">
+          <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-[#B0CBE6]/35 text-[#1E3156] dark:bg-[#496995]/40 dark:text-[#B0CBE6] border border-[#B0CBE6]/60 dark:border-[#496995]/40 uppercase tracking-wide">
             POS
           </span>
         </div>
-        <span className="block text-[10px] text-slate-500 dark:text-slate-400 font-medium mt-0.5">
+        <span className="block text-[10px] text-[#496995] dark:text-[#A5B5D2] font-medium mt-0.5">
           Pappa, Takalar &bull; Ritel & Cetak
         </span>
       </div>

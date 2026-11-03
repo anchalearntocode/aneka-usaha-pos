@@ -127,31 +127,31 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
       {lowStockItems.length > 0 && (
         <section
           aria-labelledby="alert-heading"
-          className="p-4 rounded-xl bg-rose-50/90 dark:bg-rose-950/30 border border-rose-200/90 dark:border-rose-900/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          className="p-4 rounded-xl bg-[#FDD6CD]/35 dark:bg-[#FDD6CD]/10 border border-[#FDD6CD] dark:border-[#FDD6CD]/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div className="flex items-start space-x-3.5">
-            <div className="p-2 rounded-lg bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-300 flex-shrink-0">
+            <div className="p-2 rounded-lg bg-[#FDD6CD]/70 dark:bg-[#FDD6CD]/20 text-[#6E2215] dark:text-[#FDD6CD] flex-shrink-0">
               <IconAlertBell className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h2 id="alert-heading" className="text-sm font-bold text-rose-950 dark:text-rose-100">
+                <h2 id="alert-heading" className="text-sm font-bold text-[#6E2215] dark:text-[#FDD6CD]">
                   Perlu Restok: {lowStockItems.length} Barang Mencapai Batas Minimum
                 </h2>
-                <span className="px-2 py-0.2 rounded-full text-[10px] font-bold bg-rose-200/80 dark:bg-rose-900/70 text-rose-800 dark:text-rose-200">
+                <span className="px-2 py-0.2 rounded-full text-[10px] font-bold bg-[#FDD6CD] text-[#6E2215] border border-[#FDD6CD]">
                   Prioritas Makassar
                 </span>
               </div>
-              <p className="text-xs text-rose-800/80 dark:text-rose-200/70 mt-1">
+              <p className="text-xs text-[#7A271A] dark:text-[#FDD6CD]/80 mt-1">
                 Persediaan barang berikut menipis dan perlu dicatat untuk pesanan kulakan Makassar:
               </p>
               <div className="flex flex-wrap gap-1.5 mt-2.5">
                 {lowStockItems.map((item) => (
                   <span
                     key={item.id}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-white dark:bg-slate-900 text-rose-700 dark:text-rose-300 border border-rose-200/60 dark:border-rose-900/60 shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-white/95 dark:bg-[#1E3156] text-[#6E2215] dark:text-[#FDD6CD] border border-[#FDD6CD]/60 shadow-xs"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#6E2215] dark:bg-[#FDD6CD]" />
                     <strong>{item.name}</strong>
                     <span className="text-slate-400 dark:text-slate-500">&bull; Sisa {item.stock}</span>
                   </span>
@@ -163,7 +163,7 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
           <button
             type="button"
             onClick={handleCopyRestockList}
-            className="min-h-[44px] px-3.5 py-2 rounded-lg bg-white dark:bg-slate-900 hover:bg-rose-100/50 dark:hover:bg-rose-900/40 text-rose-700 dark:text-rose-200 border border-rose-200 dark:border-rose-900/80 text-xs font-semibold whitespace-nowrap shadow-xs transition flex items-center space-x-1.5 self-start sm:self-auto"
+            className="min-h-[44px] px-3.5 py-2 rounded-lg bg-white dark:bg-[#1E3156] hover:bg-[#FDD6CD]/30 dark:hover:bg-[#FDD6CD]/20 text-[#6E2215] dark:text-[#FDD6CD] border border-[#FDD6CD] text-xs font-semibold whitespace-nowrap shadow-xs transition flex items-center space-x-1.5 self-start sm:self-auto"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -174,17 +174,17 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
       )}
 
       {/* Control Bar: Filters & Add Product */}
-      <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs p-4 rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center space-x-2">
-          <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status:</span>
-          <div className="inline-flex rounded-lg p-1 bg-slate-100 dark:bg-slate-800 text-xs font-semibold">
+          <span className="text-xs font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider">Status:</span>
+          <div className="inline-flex rounded-lg p-1 bg-[#B0CBE6]/20 dark:bg-[#1E3156]/50 text-xs font-semibold">
             <button
               type="button"
               onClick={() => setFilterStatus('all')}
               className={`min-h-[36px] px-3.5 py-1.5 rounded-md transition ${
                 filterStatus === 'all'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
+                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
               }`}
             >
               Semua ({products.length})
@@ -194,8 +194,8 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
               onClick={() => setFilterStatus('restock')}
               className={`min-h-[36px] px-3.5 py-1.5 rounded-md transition ${
                 filterStatus === 'restock'
-                  ? 'bg-rose-600 text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400'
+                  ? 'bg-[#FDD6CD] text-[#6E2215] shadow-xs font-bold'
+                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#6E2215] dark:hover:text-[#FDD6CD]'
               }`}
             >
               Harus Restok ({lowStockItems.length})
@@ -205,8 +205,8 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
               onClick={() => setFilterStatus('safe')}
               className={`min-h-[36px] px-3.5 py-1.5 rounded-md transition ${
                 filterStatus === 'safe'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
+                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
               }`}
             >
               Stok Aman ({products.length - lowStockItems.length})
@@ -217,7 +217,7 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
         <button
           type="button"
           onClick={() => setIsAddModalOpen(true)}
-          className="min-h-[44px] px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold shadow-xs transition flex items-center justify-center space-x-1.5 self-start sm:self-auto"
+          className="min-h-[44px] px-4 py-2 bg-[#1E3156] hover:bg-[#2b3f5c] text-white dark:bg-[#496995] dark:hover:bg-[#3a5477] rounded-lg text-xs font-bold shadow-xs transition flex items-center justify-center space-x-1.5 self-start sm:self-auto"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
@@ -227,10 +227,10 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
       </div>
 
       {/* 3.3 <InventoryTable /> */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-xs overflow-hidden">
+      <div className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-left text-sm">
-            <thead className="bg-slate-50/80 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 font-semibold text-xs uppercase tracking-wider">
+          <table className="min-w-full divide-y divide-[#A5B5D2]/25 dark:divide-[#2b3f5c] text-left text-sm">
+            <thead className="bg-[#B0CBE6]/15 dark:bg-[#1E3156]/50 text-[#496995] dark:text-[#A5B5D2] font-semibold text-xs uppercase tracking-wider">
               <tr>
                 <th scope="col" className="px-6 py-3.5">Produk</th>
                 <th scope="col" className="px-6 py-3.5">Kategori</th>
@@ -251,13 +251,13 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
                     key={product.id}
                     className={`transition-colors ${
                       isRestock
-                        ? 'bg-rose-50/40 dark:bg-rose-950/20 hover:bg-rose-50/70 dark:hover:bg-rose-950/30'
-                        : 'hover:bg-slate-50/60 dark:hover:bg-slate-800/40 text-slate-800 dark:text-slate-200'
+                        ? 'bg-[#FDD6CD]/15 dark:bg-[#FDD6CD]/5 hover:bg-[#FDD6CD]/25 dark:hover:bg-[#FDD6CD]/10'
+                        : 'hover:bg-[#B0CBE6]/10 dark:hover:bg-[#496995]/15 text-slate-800 dark:text-slate-200'
                     }`}
                   >
                     <td className="px-6 py-3.5 whitespace-nowrap">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 flex-shrink-0">
+                        <div className="w-10 h-10 rounded-lg overflow-hidden border border-[#A5B5D2]/40 dark:border-[#2b3f5c] bg-slate-100 dark:bg-[#1E3156]/50 flex-shrink-0">
                           <ProductImage
                             src={product.image}
                             name={product.name}
@@ -270,42 +270,42 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
                             {product.name}
                           </span>
                           {product.barcode && (
-                            <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono block">
+                            <span className="text-[10px] text-[#496995] dark:text-[#A5B5D2] font-mono block">
                               {product.barcode}
                             </span>
                           )}
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-3.5 text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                    <td className="px-6 py-3.5 text-xs text-[#496995] dark:text-[#A5B5D2] whitespace-nowrap">
                       {product.category}
                     </td>
-                    <td className="px-6 py-3.5 font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">
+                    <td className="px-6 py-3.5 font-bold text-[#1E3156] dark:text-[#B0CBE6] whitespace-nowrap">
                       {formatRupiah(product.price)}
                     </td>
                     <td className="px-6 py-3.5 text-center whitespace-nowrap">
                       <span
                         className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold ${
                           isRestock
-                            ? 'bg-rose-600 text-white'
-                            : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200'
+                            ? 'bg-[#FDD6CD] text-[#6E2215] border border-[#FDD6CD]'
+                            : 'bg-[#B0CBE6]/25 dark:bg-[#1E3156]/60 text-[#1E3156] dark:text-[#B0CBE6]'
                         }`}
                       >
                         {isService ? 'Layanan Jasa' : product.stock}
                       </span>
                     </td>
-                    <td className="px-6 py-3.5 text-center text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                    <td className="px-6 py-3.5 text-center text-xs text-[#496995] dark:text-[#A5B5D2] whitespace-nowrap">
                       {isService ? 'Tak Terbatas' : product.min_stock}
                     </td>
                     <td className="px-6 py-3.5 whitespace-nowrap">
                       {isRestock ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-500/10 text-rose-600 dark:text-rose-400">
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#FDD6CD] text-[#6E2215] border border-[#FDD6CD]/80">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#6E2215]" />
                           Perlu Restok
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#B0CBE6]/30 text-[#1E3156] dark:bg-[#496995]/20 dark:text-[#B0CBE6]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#1E3156] dark:bg-[#B0CBE6]" />
                           Aman
                         </span>
                       )}

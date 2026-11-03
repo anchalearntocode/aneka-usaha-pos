@@ -64,13 +64,20 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
   }, [pin, selectedUser]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-4 bg-slate-100 dark:bg-slate-950 transition-colors duration-150">
+    <div className="min-h-screen relative flex flex-col justify-center items-center p-4 bg-slate-100/90 dark:bg-[#0c1424] transition-colors duration-150 overflow-hidden">
+      {/* Subtle Ambient Background with reduced opacity */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0 bg-cover bg-center bg-no-repeat opacity-[0.06] dark:opacity-[0.14] transition-opacity duration-300"
+        style={{ backgroundImage: `url('/bg-waves.jpg')` }}
+        aria-hidden="true"
+      />
+
       {/* Top right theme toggle */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 right-4 z-20">
         <button
           type="button"
           onClick={onToggleDarkMode}
-          className="min-h-[44px] min-w-[44px] p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs transition"
+          className="min-h-[44px] min-w-[44px] p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white/90 dark:bg-[#1E3156]/90 border border-slate-200 dark:border-[#496995]/40 shadow-xs transition"
           aria-label={isDarkMode ? 'Beralih ke mode terang' : 'Beralih ke mode gelap'}
         >
           {isDarkMode ? (
@@ -86,14 +93,14 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
       </div>
 
       {/* Main Login Card */}
-      <div className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 p-6 space-y-5 animate-page-transition">
+      <div className="relative z-10 w-full max-w-sm bg-white/95 dark:bg-[#132039]/95 backdrop-blur-md rounded-2xl shadow-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] p-6 space-y-5 animate-page-transition">
         {/* Header Branding */}
         <div className="flex flex-col items-center text-center">
           <Logo variant="mark" className="mb-2" />
-          <h1 className="text-lg font-black tracking-tight text-slate-900 dark:text-white">
+          <h1 className="text-lg font-black tracking-tight text-[#1E3156] dark:text-white">
             Masuk ke Aneka POS
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+          <p className="text-xs text-[#496995] dark:text-[#A5B5D2] font-medium">
             Toko Aneka Usaha (Pappa, Takalar)
           </p>
         </div>
@@ -117,8 +124,8 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
                   }}
                   className={`min-h-[44px] p-2.5 rounded-xl border text-left transition-all ${
                     isSelected
-                      ? 'border-sky-500 bg-sky-50/70 dark:bg-sky-950/40 shadow-xs'
-                      : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      ? 'border-[#496995] bg-[#B0CBE6]/20 dark:bg-[#496995]/30 shadow-xs'
+                      : 'border-slate-200 dark:border-[#2b3f5c] bg-slate-50/50 dark:bg-[#1E3156]/40 hover:bg-slate-100 dark:hover:bg-[#1E3156]'
                   }`}
                 >
                   <div className="flex items-center space-x-2">
@@ -151,7 +158,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
                   key={idx}
                   className={`w-3.5 h-3.5 rounded-full transition-all duration-150 ${
                     filled
-                      ? 'bg-sky-600 dark:bg-sky-400 scale-110'
+                      ? 'bg-[#1E3156] dark:bg-[#B0CBE6] scale-110'
                       : 'bg-slate-200 dark:bg-slate-700'
                   }`}
                 />
@@ -172,7 +179,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
               key={num}
               type="button"
               onClick={() => handleNumClick(num)}
-              className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-base font-bold text-slate-800 dark:text-slate-100 shadow-xs active:scale-95 transition"
+              className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-[#1E3156]/50 hover:bg-[#B0CBE6]/20 dark:hover:bg-[#496995]/30 border border-slate-200/80 dark:border-[#496995]/30 text-base font-bold text-slate-800 dark:text-slate-100 shadow-xs active:scale-95 transition"
             >
               {num}
             </button>
@@ -180,21 +187,21 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
           <button
             type="button"
             onClick={handleClear}
-            className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-xs font-semibold text-slate-500 dark:text-slate-400 transition"
+            className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-[#1E3156]/50 hover:bg-[#B0CBE6]/20 dark:hover:bg-[#496995]/30 border border-slate-200/80 dark:border-[#496995]/30 text-xs font-semibold text-slate-500 dark:text-slate-400 transition"
           >
             Hapus
           </button>
           <button
             type="button"
             onClick={() => handleNumClick('0')}
-            className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-base font-bold text-slate-800 dark:text-slate-100 shadow-xs active:scale-95 transition"
+            className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-[#1E3156]/50 hover:bg-[#B0CBE6]/20 dark:hover:bg-[#496995]/30 border border-slate-200/80 dark:border-[#496995]/30 text-base font-bold text-slate-800 dark:text-slate-100 shadow-xs active:scale-95 transition"
           >
             0
           </button>
           <button
             type="button"
             onClick={handleBackspace}
-            className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center justify-center transition"
+            className="min-h-[48px] rounded-xl bg-slate-50 dark:bg-[#1E3156]/50 hover:bg-[#B0CBE6]/20 dark:hover:bg-[#496995]/30 border border-slate-200/80 dark:border-[#496995]/30 text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center justify-center transition"
             aria-label="Hapus satu angka"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

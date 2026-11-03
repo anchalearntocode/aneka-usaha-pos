@@ -313,31 +313,39 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-150">
-      {/* Modern Top Header */}
-      <Header
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        lowStockCount={lowStockCount}
-        totalSalesCount={sales.length}
-        isDarkMode={isDarkMode}
-        onToggleDarkMode={() => setIsDarkMode((prev) => !prev)}
-        currentUser={currentUser}
-        onLogout={handleLogout}
-        onResetData={handleResetData}
+    <div className="min-h-screen relative flex flex-col bg-slate-50 dark:bg-[#0c1424] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-150">
+      {/* Subtle Ambient Background with reduced opacity */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0 bg-cover bg-center bg-no-repeat opacity-[0.06] dark:opacity-[0.14] transition-opacity duration-300"
+        style={{ backgroundImage: `url('/bg-waves.jpg')` }}
+        aria-hidden="true"
       />
 
-      {/* Toast Notification */}
-      {notification && (
-        <div
-          role="status"
-          aria-live="polite"
-          className="fixed top-20 right-4 z-50 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-4 py-3 rounded-xl shadow-xl border border-slate-700 dark:border-slate-200 text-xs font-semibold flex items-center space-x-2 animate-bounce"
-        >
-          <span className="w-2 h-2 rounded-full bg-amber-400"></span>
-          <span>{notification}</span>
-        </div>
-      )}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Modern Top Header */}
+        <Header
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          lowStockCount={lowStockCount}
+          totalSalesCount={sales.length}
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={() => setIsDarkMode((prev) => !prev)}
+          currentUser={currentUser}
+          onLogout={handleLogout}
+          onResetData={handleResetData}
+        />
+
+        {/* Toast Notification */}
+        {notification && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="fixed top-20 right-4 z-50 bg-[#1E3156] dark:bg-white text-white dark:text-[#1E3156] px-4 py-3 rounded-xl shadow-xl border border-[#496995]/50 dark:border-slate-200 text-xs font-semibold flex items-center space-x-2 animate-bounce"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#FDD6CD]"></span>
+            <span>{notification}</span>
+          </div>
+        )}
 
       {/* Main App Content with Smooth Page Transitions */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
@@ -440,7 +448,7 @@ export const App: React.FC = () => {
       </main>
 
       {/* Footer bar */}
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800 py-3 text-center text-xs text-slate-400 dark:text-slate-500 transition-colors duration-150">
+      <footer className="bg-white/80 dark:bg-[#132039]/80 backdrop-blur-xs border-t border-[#A5B5D2]/30 dark:border-[#2b3f5c] py-3 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors duration-150">
         <p>
           Aneka POS &bull; Toko Aneka Usaha &bull; Pappa, Takalar &bull; Mode Ritel Minimalis
         </p>
@@ -448,6 +456,7 @@ export const App: React.FC = () => {
 
       {/* Global Receipt Modal */}
       <ReceiptModal sale={lastSale} onClose={() => setLastSale(null)} />
+      </div>
     </div>
   );
 };
