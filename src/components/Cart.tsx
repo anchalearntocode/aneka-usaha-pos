@@ -102,7 +102,7 @@ export const Cart: React.FC<CartProps> = ({
                     <span>&times;</span>
                     <span className="font-semibold text-slate-700 dark:text-slate-300">{item.qty}</span>
                     <span>=</span>
-                    <span className="font-bold text-sky-600 dark:text-sky-400">
+                    <span className="font-extrabold text-[#7A271A] dark:text-[#FDD6CD]">
                       {formatRupiah(item.price * item.qty)}
                     </span>
                   </div>
@@ -353,7 +353,7 @@ export const Cart: React.FC<CartProps> = ({
 
             <div className="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl">
               <span className="text-xs text-slate-500 dark:text-slate-400">Total Tagihan</span>
-              <p className="text-2xl font-black text-sky-600 dark:text-sky-400">{formatRupiah(totalAmount)}</p>
+              <p className="text-2xl font-black text-[#1E3156] dark:text-[#FDD6CD]">{formatRupiah(totalAmount)}</p>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-medium mt-1">Merchant: Toko Aneka Usaha</p>
             </div>
 
@@ -411,7 +411,7 @@ export const Cart: React.FC<CartProps> = ({
               <button
                 type="button"
                 onClick={handleConfirmQrisCheckout}
-                className="min-h-[44px] w-1/2 rounded-lg bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white shadow-xs transition"
+                className="min-h-[44px] w-1/2 rounded-lg bg-[#496995] hover:bg-[#3a5477] text-xs font-bold text-white shadow-xs transition"
               >
                 Konfirmasi Lunas
               </button>
