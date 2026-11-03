@@ -42,52 +42,44 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       aria-disabled={isOutOfStock || isCartFull}
       aria-label={`${product.name}, harga ${formatRupiah(product.price)}, sisa stok ${product.stock}`}
     >
-      {/* Product Image Area: Clean, Unobstructed, and Free of Clutter */}
-      <div className="relative w-full h-36 sm:h-40 bg-slate-100/80 dark:bg-[#101b30] overflow-hidden border-b border-[#A5B5D2]/25 dark:border-[#2b3f5c] flex items-center justify-center">
+      {/* Product Image Area with Zero Broken Image Risk */}
+      <div className="relative w-full h-36 bg-slate-100 dark:bg-[#1E3156]/40 overflow-hidden border-b border-slate-100 dark:border-[#2b3f5c]">
         <ProductImage
           src={product.image}
           name={product.name}
           category={product.category}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full"
         />
 
-        {/* Out of stock overlay wash */}
-        {isOutOfStock && (
-          <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[1px] flex items-center justify-center z-10">
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm">
+        {/* Stock Badge Overlay */}
+        <div className="absolute top-2 right-2 flex flex-col items-end gap-1">
+          {isOutOfStock ? (
+            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#1E3156]/90 text-white shadow-xs">
               Stok Habis
             </span>
-          </div>
-        )}
+          ) : isLowStock ? (
+            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#FDD6CD] text-[#7A271A] border border-[#FDD6CD] shadow-xs">
+              Minim ({product.stock})
+            </span>
+          ) : (
+            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/95 dark:bg-[#1E3156]/95 text-[#1E3156] dark:text-[#B0CBE6] shadow-xs border border-slate-200/60 dark:border-[#496995]/50">
+              Stok: {product.stock}
+            </span>
+          )}
+        </div>
+
+        {/* Category Pill Overlay */}
+        <div className="absolute bottom-2 left-2">
+          <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#1E3156]/90 text-white border border-[#496995]/40 shadow-xs">
+            {product.category}
+          </span>
+        </div>
       </div>
 
-      {/* Product Content Details: Modern Typographic Meta & Hierarchy */}
+      {/* Product Content Details */}
       <div className="p-3.5 flex-1 flex flex-col justify-between">
         <div>
-          {/* Metadata Row: Category & Stock Status */}
-          <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[#496995] dark:text-[#A5B5D2]">
-              {product.category}
-            </span>
-
-            {product.category === 'Jasa' ? (
-              <span className="text-[10px] font-semibold text-[#496995] dark:text-[#A5B5D2]">
-                Layanan
-              </span>
-            ) : isLowStock ? (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FDD6CD] text-[#7A271A] border border-[#FDD6CD] shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7A271A] animate-pulse" />
-                Sisa {product.stock} (Minim)
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 dark:text-[#A5B5D2]">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                {product.stock} unit
-              </span>
-            )}
-          </div>
-
-          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-[#496995] dark:group-hover:text-[#B0CBE6] transition-colors">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 leading-snug line-clamp-2 min-h-[2.5rem]">
             {product.name}
           </h3>
           {product.barcode && (

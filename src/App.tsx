@@ -413,9 +413,9 @@ export const App: React.FC = () => {
                 )}
               </section>
 
-              {/* Right 40%: Sticky Cashier Cart Station */}
+              {/* Right 40%: Sticky Fixed Cashier Cart Station */}
               <section
-                className="lg:col-span-5 sticky top-20 h-[calc(100vh-6.5rem)]"
+                className="lg:col-span-5 lg:sticky lg:top-20 lg:h-[calc(100vh-6.5rem)] self-start"
                 aria-label="Stasiun Kasir & Keranjang"
               >
                 <Cart

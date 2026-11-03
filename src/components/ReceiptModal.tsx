@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { SaleRecord } from '../types';
 import { formatRupiah, formatDateTime } from '../utils/format';
 import { Logo } from './Logo';
@@ -15,7 +16,9 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ sale, onClose }) => 
     window.print();
   };
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-xs"
       role="dialog"
@@ -63,7 +66,7 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ sale, onClose }) => 
           </div>
           <div className="flex justify-between text-slate-600">
             <span>Metode Bayar</span>
-            <span className="font-bold text-sky-700">{sale.paymentMethod}</span>
+            <span className="font-bold text-[#496995]">{sale.paymentMethod}</span>
           </div>
           {sale.paymentMethod === 'Tunai' && typeof sale.cashTendered === 'number' && (
             <>
@@ -73,7 +76,9 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ sale, onClose }) => 
               </div>
               <div className="flex justify-between font-bold text-emerald-700">
                 <span>Kembalian</span>
-                <span>{formatRupiah(sale.change || 0)}</span>
+                <span className="font-semibold text-slate-800">
+                  {formatRupiah(sale.change || 0)}
+                </span>
               </div>
             </>
           )}
@@ -104,12 +109,13 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ sale, onClose }) => 
           <button
             type="button"
             onClick={onClose}
-            className="min-h-[44px] w-1/2 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold shadow-xs transition"
+            className="min-h-[44px] w-1/2 rounded-lg bg-[#1E3156] hover:bg-[#2b3f5c] text-white text-xs font-bold shadow-xs transition"
           >
             Selesai / Tutup
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

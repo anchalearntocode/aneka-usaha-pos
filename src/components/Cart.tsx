@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { CartItem } from '../types';
 import { formatRupiah } from '../utils/format';
 
@@ -208,7 +209,7 @@ export const Cart: React.FC<CartProps> = ({
       </div>
 
       {/* Modal Checkout Tunai */}
-      {isCashModalOpen && (
+      {isCashModalOpen && typeof document !== 'undefined' && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs"
           role="dialog"
@@ -322,11 +323,12 @@ export const Cart: React.FC<CartProps> = ({
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Modal QRIS */}
-      {isQrisModalOpen && (
+      {isQrisModalOpen && typeof document !== 'undefined' && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs"
           role="dialog"
@@ -417,7 +419,8 @@ export const Cart: React.FC<CartProps> = ({
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </aside>
   );
