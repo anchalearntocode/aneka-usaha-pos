@@ -43,7 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       aria-label={`${product.name}, harga ${formatRupiah(product.price)}, sisa stok ${product.stock}`}
     >
       {/* Product Image Area with Zero Broken Image Risk */}
-      <div className="relative w-full h-36 bg-slate-100 dark:bg-[#1E3156]/40 overflow-hidden border-b border-slate-100 dark:border-[#2b3f5c]">
+      <div className="relative w-full h-36 bg-gradient-to-b from-[#B0CBE6]/20 via-[#f4f7fb] to-white dark:bg-[#1E3156]/40 overflow-hidden border-b border-[#A5B5D2]/30 dark:border-[#2b3f5c]">
         <ProductImage
           src={product.image}
           name={product.name}
@@ -62,7 +62,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               Minim ({product.stock})
             </span>
           ) : (
-            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/95 dark:bg-[#1E3156]/95 text-[#1E3156] dark:text-[#B0CBE6] shadow-xs border border-slate-200/60 dark:border-[#496995]/50">
+            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#B0CBE6] text-[#1E3156] shadow-xs border border-[#A5B5D2]/60 dark:bg-[#1E3156]/95 dark:text-[#B0CBE6] dark:border-[#496995]/50">
               Stok: {product.stock}
             </span>
           )}
@@ -70,7 +70,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Category Pill Overlay */}
         <div className="absolute bottom-2 left-2">
-          <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#1E3156]/90 text-white border border-[#496995]/40 shadow-xs">
+          <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#1E3156] text-white border border-[#496995]/40 shadow-xs">
             {product.category}
           </span>
         </div>
@@ -108,7 +108,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             className={`min-h-[44px] px-3.5 rounded-lg text-xs font-bold flex items-center space-x-1.5 transition ${
               isOutOfStock || isCartFull
                 ? 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed border border-slate-200 dark:border-slate-700'
-                : 'bg-[#B0CBE6]/25 dark:bg-[#496995]/30 text-[#1E3156] dark:text-[#B0CBE6] hover:bg-[#496995] dark:hover:bg-[#496995] hover:text-white dark:hover:text-white border border-[#B0CBE6]/60 dark:border-[#496995]/50 shadow-xs active:scale-95'
+                : 'bg-[#B0CBE6]/40 hover:bg-[#1E3156] hover:text-white text-[#1E3156] dark:bg-[#496995]/30 dark:text-[#B0CBE6] dark:hover:bg-[#496995] dark:hover:text-white border border-[#B0CBE6] dark:border-[#496995]/50 shadow-xs active:scale-95'
             }`}
             aria-label={`Tambah ${product.name} ke keranjang`}
           >

@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/90 dark:bg-[#132039]/90 backdrop-blur-md border-b border-[#A5B5D2]/30 dark:border-[#2b3f5c] transition-colors duration-150">
+    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#132039]/90 backdrop-blur-md border-b border-[#B0CBE6]/70 dark:border-[#2b3f5c] shadow-xs transition-colors duration-150">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-3">
           {/* Left: Brand Logo */}
@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Center: Modern Segmented Navigation Pill based on Role */}
           <nav
-            className="flex items-center bg-[#B0CBE6]/20 dark:bg-[#1E3156]/70 p-1 rounded-xl border border-[#A5B5D2]/30 dark:border-[#496995]/30"
+            className="flex items-center bg-[#B0CBE6]/30 dark:bg-[#1E3156]/70 p-1 rounded-xl border border-[#A5B5D2]/40 dark:border-[#496995]/30"
             aria-label="Navigasi Tampilan"
           >
             {/* If Owner: Show Dashboard tab */}
@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`min-h-[44px] px-3.5 sm:px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center space-x-1.5 sm:space-x-2 ${
                   activeTab === 'dashboard'
                     ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                    : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                    : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/70 dark:hover:text-white'
                 }`}
               >
                 <IconDashboard className="w-4 h-4 text-[#B0CBE6] dark:text-[#FDD6CD]" />
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`min-h-[44px] px-3.5 sm:px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center space-x-1.5 sm:space-x-2 ${
                   activeTab === 'pos'
                     ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                    : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                    : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/70 dark:hover:text-white'
                 }`}
               >
                 <IconRegister className="w-4 h-4 opacity-80" />
@@ -107,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`min-h-[44px] relative px-3.5 sm:px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center space-x-1.5 sm:space-x-2 ${
                   activeTab === 'inventory'
                     ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                    : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                    : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/70 dark:hover:text-white'
                 }`}
               >
                 <IconInventoryBox className="w-4 h-4 opacity-80" />
@@ -128,13 +128,13 @@ export const Header: React.FC<HeaderProps> = ({
               className={`min-h-[44px] px-3.5 sm:px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center space-x-1.5 sm:space-x-2 ${
                 activeTab === 'history'
                   ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                  : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/70 dark:hover:text-white'
               }`}
             >
               <IconReceiptHistory className="w-4 h-4 opacity-80" />
               <span>Riwayat</span>
               {totalSalesCount > 0 && (
-                <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-[#B0CBE6]/40 dark:bg-[#14213d] text-[#1E3156] dark:text-[#B0CBE6]">
+                <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-[#B0CBE6]/60 dark:bg-[#14213d] text-[#1E3156] dark:text-[#B0CBE6]">
                   {totalSalesCount}
                 </span>
               )}
@@ -145,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center space-x-2">
             {/* Clock */}
             {currentTime && (
-              <span className="hidden xl:inline-block text-xs font-mono text-[#496995] dark:text-[#A5B5D2] px-1">
+              <span className="hidden xl:inline-block text-xs font-mono text-[#496995] dark:text-[#A5B5D2] px-1 font-semibold">
                 {currentTime}
               </span>
             )}
@@ -154,7 +154,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onToggleDarkMode}
-              className="min-h-[44px] min-w-[44px] p-2 rounded-lg text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white hover:bg-[#B0CBE6]/20 dark:hover:bg-[#1E3156] transition"
+              className="min-h-[44px] min-w-[44px] p-2 rounded-lg text-[#1E3156] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white hover:bg-[#B0CBE6]/30 dark:hover:bg-[#1E3156] transition"
               aria-label={isDarkMode ? 'Beralih ke mode terang' : 'Beralih ke mode gelap'}
               title={isDarkMode ? 'Mode Terang' : 'Mode Gelap'}
             >
@@ -167,7 +167,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Logged-in User Badge */}
             {currentUser && (
-              <div className="hidden sm:flex items-center space-x-2 px-2.5 py-1 rounded-xl bg-white/90 dark:bg-[#1E3156]/90 border border-[#A5B5D2]/30 dark:border-[#496995]/30">
+              <div className="hidden sm:flex items-center space-x-2 px-2.5 py-1 rounded-xl bg-[#B0CBE6]/25 dark:bg-[#1E3156]/90 border border-[#B0CBE6] dark:border-[#496995]/30">
                 <span className={`w-2 h-2 rounded-full ${currentUser.avatarColor}`} />
                 <div className="text-left leading-none">
                   <span className="text-[11px] font-bold text-[#1E3156] dark:text-white block truncate max-w-[120px]">
@@ -184,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onLogout}
-              className="min-h-[44px] px-3 py-1.5 rounded-lg text-xs font-semibold text-[#496995] dark:text-[#A5B5D2] hover:text-[#7A271A] dark:hover:text-[#FDD6CD] hover:bg-[#FDD6CD]/25 dark:hover:bg-[#FDD6CD]/10 border border-[#A5B5D2]/30 dark:border-[#496995]/30 transition flex items-center space-x-1"
+              className="min-h-[44px] px-3 py-1.5 rounded-lg text-xs font-semibold text-[#1E3156] dark:text-[#A5B5D2] hover:text-[#7A271A] dark:hover:text-[#FDD6CD] hover:bg-[#FDD6CD]/40 dark:hover:bg-[#FDD6CD]/10 border border-[#B0CBE6] dark:border-[#496995]/30 transition flex items-center space-x-1"
               title="Kunci atau ganti akun kasir/owner"
             >
               <svg className="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

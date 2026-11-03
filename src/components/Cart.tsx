@@ -48,11 +48,11 @@ export const Cart: React.FC<CartProps> = ({
 
   return (
     <aside
-      className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/35 dark:border-[#2b3f5c] shadow-xs flex flex-col h-full overflow-hidden transition-colors duration-150"
+      className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#B0CBE6]/70 dark:border-[#2b3f5c] shadow-xs flex flex-col h-full overflow-hidden transition-colors duration-150"
       aria-label="Keranjang Kasir"
     >
-      {/* Header Cart */}
-      <div className="p-4 border-b border-[#A5B5D2]/30 dark:border-[#2b3f5c] bg-[#B0CBE6]/15 dark:bg-[#1E3156]/50 flex items-center justify-between">
+      {/* Header Cart with Gradient Tint */}
+      <div className="p-4 border-b border-[#B0CBE6]/70 dark:border-[#2b3f5c] bg-gradient-to-r from-[#B0CBE6]/35 via-white to-[#FDD6CD]/25 dark:from-[#1E3156]/50 dark:to-[#1E3156]/50 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <svg className="w-4 h-4 text-[#1E3156] dark:text-[#B0CBE6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -66,7 +66,7 @@ export const Cart: React.FC<CartProps> = ({
           <button
             type="button"
             onClick={onClearCart}
-            className="text-xs text-[#7A271A] dark:text-[#FDD6CD] hover:text-[#541c15] dark:hover:text-white font-medium px-2 py-1 rounded hover:bg-[#FDD6CD]/30 dark:hover:bg-[#FDD6CD]/10 transition"
+            className="text-xs text-[#7A271A] dark:text-[#FDD6CD] hover:text-[#541c15] dark:hover:text-white font-bold px-2 py-1 rounded bg-[#FDD6CD]/40 hover:bg-[#FDD6CD]/70 dark:bg-transparent dark:hover:bg-[#FDD6CD]/10 transition"
           >
             Kosongkan
           </button>
@@ -76,8 +76,8 @@ export const Cart: React.FC<CartProps> = ({
       {/* Item List */}
       <div className="flex-1 overflow-y-auto p-4 space-y-2.5">
         {items.length === 0 ? (
-          <div className="h-64 flex flex-col items-center justify-center text-center p-6 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-lg">
-            <svg className="w-10 h-10 text-slate-300 dark:text-slate-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <div className="h-64 flex flex-col items-center justify-center text-center p-6 border-2 border-dashed border-[#B0CBE6]/60 dark:border-slate-800 rounded-lg bg-[#B0CBE6]/10 dark:bg-transparent">
+            <svg className="w-10 h-10 text-[#496995]/40 dark:text-slate-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
             <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">Keranjang Masih Kosong</p>
@@ -92,7 +92,7 @@ export const Cart: React.FC<CartProps> = ({
             return (
               <div
                 key={item.id}
-                className="flex items-center justify-between p-3 rounded-lg border border-slate-200/70 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition"
+                className="flex items-center justify-between p-3 rounded-lg border border-[#B0CBE6]/70 dark:border-slate-800 bg-[#B0CBE6]/15 dark:bg-slate-800/30 hover:bg-[#B0CBE6]/25 dark:hover:bg-slate-800/60 transition"
               >
                 <div className="flex-1 pr-2 min-w-0">
                   <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
@@ -158,7 +158,7 @@ export const Cart: React.FC<CartProps> = ({
       </div>
 
       {/* Cart Summary & Action Buttons */}
-      <div className="p-4 bg-slate-50/70 dark:bg-[#1E3156]/30 border-t border-[#A5B5D2]/30 dark:border-[#2b3f5c] space-y-3">
+      <div className="p-4 bg-gradient-to-r from-[#B0CBE6]/30 via-white to-[#FDD6CD]/25 dark:from-[#1E3156]/30 dark:to-[#1E3156]/30 border-t border-[#B0CBE6]/70 dark:border-[#2b3f5c] space-y-3">
         <div className="space-y-1">
           <div className="flex justify-between text-xs text-[#496995] dark:text-[#A5B5D2]">
             <span>Jumlah Item</span>

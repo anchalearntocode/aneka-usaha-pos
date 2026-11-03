@@ -174,17 +174,17 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
       )}
 
       {/* Control Bar: Filters & Add Product */}
-      <div className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs p-4 rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs p-4 rounded-xl border border-[#B0CBE6]/70 dark:border-[#2b3f5c] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center space-x-2">
           <span className="text-xs font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider">Status:</span>
-          <div className="inline-flex rounded-lg p-1 bg-[#B0CBE6]/20 dark:bg-[#1E3156]/50 text-xs font-semibold">
+          <div className="inline-flex rounded-lg p-1 bg-[#B0CBE6]/30 dark:bg-[#1E3156]/50 text-xs font-semibold">
             <button
               type="button"
               onClick={() => setFilterStatus('all')}
               className={`min-h-[36px] px-3.5 py-1.5 rounded-md transition ${
                 filterStatus === 'all'
                   ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                  : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/60 dark:hover:text-white'
               }`}
             >
               Semua ({products.length})
@@ -206,7 +206,7 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
               className={`min-h-[36px] px-3.5 py-1.5 rounded-md transition ${
                 filterStatus === 'safe'
                   ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                  : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/60 dark:hover:text-white'
               }`}
             >
               Stok Aman ({products.length - lowStockItems.length})
@@ -227,10 +227,10 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
       </div>
 
       {/* 3.3 <InventoryTable /> */}
-      <div className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs overflow-hidden">
+      <div className="bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#B0CBE6]/70 dark:border-[#2b3f5c] shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-[#A5B5D2]/25 dark:divide-[#2b3f5c] text-left text-sm">
-            <thead className="bg-[#B0CBE6]/15 dark:bg-[#1E3156]/50 text-[#496995] dark:text-[#A5B5D2] font-semibold text-xs uppercase tracking-wider">
+            <thead className="bg-[#B0CBE6]/30 dark:bg-[#1E3156]/50 text-[#1E3156] dark:text-[#A5B5D2] font-bold text-xs uppercase tracking-wider">
               <tr>
                 <th scope="col" className="px-6 py-3.5">Produk</th>
                 <th scope="col" className="px-6 py-3.5">Kategori</th>

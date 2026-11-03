@@ -230,10 +230,10 @@ export const OwnerDashboard: React.FC<OwnerDashboardProps> = ({
         </div>
       </div>
 
-      {/* 2. Top Primary Metric Cards (5 KPI Cards) */}
+      {/* 2. Top Primary Metric Cards (5 KPI Cards with Palette Accents) */}
       <section aria-label="Ringkasan Kinerja Utama" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card 1: Total Omzet */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#B0CBE6]/30 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#B0CBE6] dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider block">
               Total Omzet Penjualan
@@ -250,7 +250,7 @@ export const OwnerDashboard: React.FC<OwnerDashboardProps> = ({
         </div>
 
         {/* Card 2: Valuasi Aset Stok */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#A5B5D2]/25 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/60 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider block">
               Valuasi Aset Stok Toko
@@ -262,13 +262,13 @@ export const OwnerDashboard: React.FC<OwnerDashboardProps> = ({
               {stats.totalStockUnits} unit barang fisik di etalase
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-[#B0CBE6]/25 dark:bg-[#496995]/20 flex items-center justify-center text-[#1E3156] dark:text-[#B0CBE6] flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#B0CBE6]/40 dark:bg-[#496995]/20 flex items-center justify-center text-[#1E3156] dark:text-[#B0CBE6] flex-shrink-0 border border-[#B0CBE6]/60">
             <IconInventoryBox className="w-5 h-5" />
           </div>
         </div>
 
         {/* Card 3: Rata-rata Nilai Transaksi */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#496995]/15 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#496995]/40 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider block">
               Rata-rata per Nota (Basket)
@@ -287,7 +287,7 @@ export const OwnerDashboard: React.FC<OwnerDashboardProps> = ({
         <div
           className={`p-4 rounded-xl border shadow-xs flex items-center justify-between transition cursor-pointer ${
             stats.lowStockItems.length > 0
-              ? 'bg-[#FDD6CD]/35 dark:bg-[#FDD6CD]/10 border-[#FDD6CD] dark:border-[#FDD6CD]/40 hover:border-[#fcd0c5]'
+              ? 'bg-gradient-to-br from-[#FDD6CD]/60 via-white to-white dark:bg-[#FDD6CD]/10 border-[#FDD6CD] dark:border-[#FDD6CD]/40 hover:border-[#fcd0c5]'
               : 'bg-white/95 dark:bg-[#132039]/95 border-[#A5B5D2]/30 dark:border-[#2b3f5c]'
           }`}
           onClick={onNavigateToInventory}
@@ -303,7 +303,7 @@ export const OwnerDashboard: React.FC<OwnerDashboardProps> = ({
               {stats.lowStockItems.length > 0 ? 'Perlu pesanan Makassar' : 'Semua stok dalam batas aman'}
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-[#FDD6CD]/50 dark:bg-[#FDD6CD]/20 flex items-center justify-center text-[#6E2215] dark:text-[#FDD6CD] flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#FDD6CD] dark:bg-[#FDD6CD]/20 flex items-center justify-center text-[#6E2215] dark:text-[#FDD6CD] flex-shrink-0 border border-[#FDD6CD]">
             <IconAlertBell className="w-5 h-5" />
           </div>
         </div>

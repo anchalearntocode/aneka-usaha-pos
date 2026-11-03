@@ -68,10 +68,10 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12 transition-colors duration-150">
-      {/* KPI Summary Cards */}
+      {/* KPI Summary Cards with Palette Accents */}
       <section aria-label="Ringkasan Penjualan Kasir" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Total Omzet */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#B0CBE6]/35 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#B0CBE6] dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider">
               Total Omzet Penjualan
@@ -87,7 +87,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
         </div>
 
         {/* Total Transaksi */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#A5B5D2]/25 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/60 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider">
               Volume Transaksi
@@ -103,7 +103,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
         </div>
 
         {/* Pembayaran Tunai */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#1E3156]/10 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#1E3156]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider">
               Tunai (Cash)
@@ -119,7 +119,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
         </div>
 
         {/* Pembayaran QRIS */}
-        <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
+        <div className="p-4 bg-gradient-to-br from-[#FDD6CD]/40 via-white to-white dark:from-[#132039]/95 dark:to-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#FDD6CD] dark:border-[#2b3f5c] shadow-xs flex items-center justify-between">
           <div>
             <span className="text-[11px] font-semibold text-[#496995] dark:text-[#A5B5D2] uppercase tracking-wider">
               QRIS Digital
@@ -136,7 +136,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
       </section>
 
       {/* Filter, Search, and Action Bar */}
-      <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#A5B5D2]/30 dark:border-[#2b3f5c] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-4 bg-white/95 dark:bg-[#132039]/95 backdrop-blur-xs rounded-xl border border-[#B0CBE6]/70 dark:border-[#2b3f5c] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         {/* Search Input */}
         <div className="relative flex-1 max-w-md">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#496995] dark:text-[#A5B5D2]">
@@ -149,7 +149,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Cari ID transaksi (cth: TRX-948201) atau nama barang..."
-            className="w-full pl-9 pr-8 py-2 bg-slate-50/90 dark:bg-[#1E3156]/50 border border-[#A5B5D2]/40 dark:border-[#496995]/40 rounded-lg text-xs text-slate-900 dark:text-slate-100 placeholder-[#496995]/60 dark:placeholder-[#A5B5D2]/60 focus:bg-white dark:focus:bg-[#1E3156] focus:outline-none focus:ring-2 focus:ring-[#496995]"
+            className="w-full pl-9 pr-8 py-2 bg-[#B0CBE6]/15 dark:bg-[#1E3156]/50 border border-[#A5B5D2]/50 dark:border-[#496995]/40 rounded-lg text-xs text-[#1E3156] dark:text-slate-100 placeholder-[#496995]/70 dark:placeholder-[#A5B5D2]/60 focus:bg-white dark:focus:bg-[#1E3156] focus:outline-none focus:ring-2 focus:ring-[#496995]"
           />
           {searchTerm && (
             <button
@@ -165,14 +165,14 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
 
         {/* Method Filter Buttons and Clear History Button */}
         <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex rounded-lg p-1 bg-[#B0CBE6]/20 dark:bg-[#1E3156]/50 text-xs font-semibold">
+          <div className="inline-flex rounded-lg p-1 bg-[#B0CBE6]/30 dark:bg-[#1E3156]/50 text-xs font-semibold">
             <button
               type="button"
               onClick={() => setFilterMethod('all')}
               className={`min-h-[36px] px-3 py-1.5 rounded-md transition ${
                 filterMethod === 'all'
                   ? 'bg-[#1E3156] dark:bg-[#496995] text-white shadow-xs font-bold'
-                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                  : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/60 dark:hover:text-white'
               }`}
             >
               Semua ({sales.length})
@@ -183,7 +183,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
               className={`min-h-[36px] px-3 py-1.5 rounded-md transition ${
                 filterMethod === 'Tunai'
                   ? 'bg-[#1E3156] text-white shadow-xs font-bold'
-                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#1E3156] dark:hover:text-white'
+                  : 'text-[#1E3156] dark:text-[#A5B5D2] hover:bg-white/60 dark:hover:text-white'
               }`}
             >
               Tunai ({stats.cashCount})
@@ -194,7 +194,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
               className={`min-h-[36px] px-3 py-1.5 rounded-md transition ${
                 filterMethod === 'QRIS'
                   ? 'bg-[#496995] text-white shadow-xs font-bold'
-                  : 'text-[#496995] dark:text-[#A5B5D2] hover:text-[#496995] dark:hover:text-white'
+                  : 'text-[#496995] dark:text-[#A5B5D2] hover:bg-white/60 dark:hover:text-white'
               }`}
             >
               QRIS ({stats.qrisCount})
@@ -235,7 +235,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ sales, onClearHistory 
         ) : (
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-[#A5B5D2]/25 dark:divide-[#2b3f5c] text-left text-sm">
-              <thead className="bg-[#B0CBE6]/15 dark:bg-[#1E3156]/50 text-[#496995] dark:text-[#A5B5D2] font-semibold text-xs uppercase tracking-wider">
+              <thead className="bg-[#B0CBE6]/30 dark:bg-[#1E3156]/50 text-[#1E3156] dark:text-[#A5B5D2] font-bold text-xs uppercase tracking-wider">
                 <tr>
                   <th scope="col" className="px-6 py-3.5">ID Transaksi</th>
                   <th scope="col" className="px-6 py-3.5">Waktu</th>

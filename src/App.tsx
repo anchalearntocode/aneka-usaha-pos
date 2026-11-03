@@ -313,10 +313,10 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen relative flex flex-col bg-slate-50 dark:bg-[#0c1424] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-150">
-      {/* Subtle Ambient Background with reduced opacity */}
+    <div className="min-h-screen relative flex flex-col bg-gradient-to-br from-[#f2f6fa] via-[#edf3f9] to-[#fbf0ec] dark:from-[#0c1424] dark:to-[#0c1424] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-150">
+      {/* Ambient Waves Background Layer with Enhanced Palette Presence in Light Mode */}
       <div
-        className="fixed inset-0 pointer-events-none z-0 bg-cover bg-center bg-no-repeat opacity-[0.06] dark:opacity-[0.14] transition-opacity duration-300"
+        className="fixed inset-0 pointer-events-none z-0 bg-cover bg-center bg-no-repeat opacity-[0.14] dark:opacity-[0.14] transition-opacity duration-300"
         style={{ backgroundImage: `url('/bg-waves.jpg')` }}
         aria-hidden="true"
       />
